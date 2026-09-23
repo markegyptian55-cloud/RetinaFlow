@@ -323,6 +323,6 @@ with gr.Blocks(theme=QUANTUM_BLACK_THEME, css=QUANTUM_BLACK_CSS, title="Retinal 
 
 if __name__ == "__main__":
     try:
-        demo.launch(mcp_server=True)
+        demo.launch(show_api=False, mcp_server=True)
     except TypeError:
-        demo.launch()
+        demo.launch(show_api=False)
