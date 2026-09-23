@@ -15,9 +15,18 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - name: Push to Hugging Face
+      - name: Push to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Create an orphan deployment branch containing only application runtime files
+          git checkout --orphan hf-deploy
+          git rm -rf --cached EyeDisease.ipynb .github AGENTS.md
+          git commit -m "Deploy RetinaFlow application to Hugging Face Space"
+
+          # Push deployment branch and LFS models to Hugging Face Space
           git remote add space https://egyx:$HF_TOKEN@huggingface.co/spaces/egyx/RetinaFlow
-          git push --prune --force space main
+          git push --prune --force space hf-deploy:main
