@@ -312,7 +312,7 @@ with gr.Blocks(theme=QUANTUM_BLACK_THEME, css=QUANTUM_BLACK_CSS, title="Retinal 
     def update_blurb(model_choice):
         return MODEL_CONFIGS[model_choice]["blurb"]
 
-    model_selector.change(fn=update_blurb, inputs=model_selector, outputs=model_info)
+    model_selector.change(fn=update_blurb, inputs=model_selector, outputs=model_info, api_name=False)
 
     submit_btn.click(
         fn=classify_retinal_image,
