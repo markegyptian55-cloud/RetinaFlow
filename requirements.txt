@@ -13,4 +13,3 @@ onnx
 onnxruntime
 onnxscript
 gradio[mcp]
-huggingface_hub<0.26.0
