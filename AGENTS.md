@@ -9,24 +9,27 @@
 ## 📍 1. Executive Summary & Current Operational State
 
 * **GitHub Repository:** [`https://github.com/markegyptian55-cloud/RetinaFlow.git`](https://github.com/markegyptian55-cloud/RetinaFlow.git)
+* **Hugging Face Space:** [`https://huggingface.co/spaces/egyx/RetinaFlow`](https://huggingface.co/spaces/egyx/RetinaFlow)
 * **Local Workspace Directory:** `D:\projects\EyeDisease` (Windows local workspace)
 * **Active Git Branch:** `main` tracking `origin/main`
-* **Latest Remote Commit:** `ec2333d7fce25761194ebe9d0ebc9a07e430199a`
-  - Message: *"Initial commit: RetinaFlow retinal disease classifier with dual ONNX models"*
+* **GitHub & Hugging Face Automated CI/CD Sync:**
+  - Automated continuous deployment via `.github/workflows/sync_to_hf.yml`.
+  - Secret `HF_TOKEN` stored in GitHub repository secrets.
+  - Every `git push` to `main` creates a clean orphan deploy bundle containing `app.py`, `README.md`, `models/`, `assets/`, `requirements.txt` and automatically force-pushes code and Git LFS objects to Hugging Face Space.
 * **GitHub Authentication & Credentials:**
   - Authenticated via GitHub CLI (`gh`) under account: **`markegyptian55-cloud`**
   - Git Operations Protocol: `https`
   - Active Token Scopes: `repo`, `workflow`, `read:org`, `gist`
 * **Git LFS Status:**
-  - Initialized and tracking `"*.onnx"` via `.gitattributes`.
-  - Both large ONNX models (211 MB total) are 100% synced and stored in GitHub Git LFS media storage:
+  - Initialized and tracking `"*.onnx"`, `"*.jpg"`, `"*.png"`, `"*.jpeg"` via `.gitattributes`.
+  - Both large ONNX models (211 MB total) and all 8 sample images are synced to GitHub and Hugging Face Git LFS:
     - `models/resnet50_m5a.onnx` (SHA-256 pointer `658ebacd08...`, 98.17 MB)
     - `models/efficientnet_b5_m6.onnx` (SHA-256 pointer `b5d71c8402...`, 113.26 MB)
-* **Where We Stopped:**
-  - The repository has been fully audited from Google Colab research artifacts.
-  - Both ONNX models are verified and functional on CPU inference.
-  - The Gradio web app (`app.py`) with MCP server integration is complete.
-  - Everything is committed and pushed cleanly to GitHub. Working tree is clean.
+* **Current Operational State:**
+  - Full codebase pushed and live on GitHub and Hugging Face Spaces.
+  - Both ONNX models are verified and operational on CPU inference.
+  - The Gradio web app (`app.py`) with MCP server integration is deployed.
+  - Working tree is clean and up to date.
 
 ---
 
