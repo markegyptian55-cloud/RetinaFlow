@@ -1,3 +1,15 @@
+---
+title: RetinaFlow
+emoji: 👁️
+colorFrom: blue
+colorTo: purple
+sdk: gradio
+sdk_version: 4.44.0
+app_file: app.py
+pinned: false
+license: mit
+---
+
 # 👁️ RetinaFlow
 
 ### Dual-Model Retinal Disease Classifier — ResNet-50 & EfficientNet-B5, trained on a severely imbalanced 11.8K-image clinical dataset, augmented with OT-CFM (Flow Matching) synthetic generation.
