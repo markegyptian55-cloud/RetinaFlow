@@ -268,7 +268,7 @@ This project trains two valid "champion" models rather than picking one and hidi
 Neither model is "correct" in isolation — the right choice depends on whether missing a rare, high-risk case (favor High-Sensitivity) or overall diagnostic reliability (favor General-Purpose) matters more for your use case. This demo is for research/educational purposes only and is **not a certified diagnostic tool**.
 """
 
-with gr.Blocks(css=QUANTUM_BLACK_CSS, title="Retinal Disease Classifier") as demo:
+with gr.Blocks(theme=QUANTUM_BLACK_THEME, css=QUANTUM_BLACK_CSS, title="Retinal Disease Classifier") as demo:
 
     with gr.Column(elem_id="qb-header"):
         gr.Markdown("# 👁️ Retinal Fundus Disease Classifier")
@@ -322,4 +322,7 @@ with gr.Blocks(css=QUANTUM_BLACK_CSS, title="Retinal Disease Classifier") as dem
     )
 
 if __name__ == "__main__":
-    demo.launch(theme=QUANTUM_BLACK_THEME, mcp_server=True)
+    try:
+        demo.launch(mcp_server=True)
+    except TypeError:
+        demo.launch()
