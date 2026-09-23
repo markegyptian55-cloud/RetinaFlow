@@ -5,6 +5,17 @@ import onnxruntime as ort
 import gradio as gr
 from PIL import Image
 
+try:
+    import spaces
+except ImportError:
+    class _MockSpaces:
+        @staticmethod
+        def GPU(fn=None, **kwargs):
+            if fn is not None and callable(fn):
+                return fn
+            return lambda f: f
+    spaces = _MockSpaces()
+
 # ============================================================================
 # CONFIG — confirmed class order (alphabetical, matches training exactly)
 # ============================================================================
@@ -82,6 +93,7 @@ def softmax(x: np.ndarray) -> np.ndarray:
 # ============================================================================
 # CORE PREDICTION FUNCTION (the single public endpoint)
 # ============================================================================
+@spaces.GPU
 def classify_retinal_image(image: Image.Image, model_choice: str):
     if image is None:
         raise gr.Error("Please upload a fundus image before running the classifier.")
