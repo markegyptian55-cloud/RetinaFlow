@@ -322,26 +322,15 @@ with gr.Blocks(theme=QUANTUM_BLACK_THEME, css=QUANTUM_BLACK_CSS, title="Retinal 
     )
 
 if __name__ == "__main__":
-    import sys, traceback
+    import sys
     try:
         sys.stdout.reconfigure(line_buffering=True)
     except Exception:
         pass
 
-    try:
-        demo.launch(
-            server_name="0.0.0.0",
-            server_port=7860,
-            ssr_mode=False,
-            show_api=False,
-            mcp_server=True
-        )
-    except Exception as e:
-        print("[MCP LAUNCH ERROR]:", repr(e), flush=True)
-        traceback.print_exc()
-        demo.launch(
-            server_name="0.0.0.0",
-            server_port=7860,
-            ssr_mode=False,
-            show_api=False
-        )
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=7860,
+        ssr_mode=False,
+        show_api=False
+    )
