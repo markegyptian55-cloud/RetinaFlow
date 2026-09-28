@@ -943,8 +943,12 @@ if __name__ == "__main__":
     except Exception:
         pass
 
-    demo.launch(
-        server_name="0.0.0.0",
-        server_port=7860,
-        mcp_server=True
-    )
+    launch_kwargs = {
+        "server_name": "0.0.0.0",
+        "server_port": 7860,
+    }
+    import inspect
+    if "mcp_server" in inspect.signature(demo.launch).parameters:
+        launch_kwargs["mcp_server"] = True
+
+    demo.launch(**launch_kwargs)
