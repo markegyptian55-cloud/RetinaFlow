@@ -1,9 +1,32 @@
 """
-RetinaFlow — Dual-Model Retinal Disease Diagnostic System
+---
+title: RetinaFlow Standalone
+emoji: 👁️
+colorFrom: blue
+colorTo: purple
+sdk: gradio
+sdk_version: 5.20.0
+app_file: app.py
+pinned: false
+license: mit
+---
+
+RetinaFlow — Dual-Model Retinal Disease Diagnostic System (Self-Contained Standalone Edition)
 Author: Mohamed Mostafa Elbasyouni (markegyptian55-cloud)
 Repository: https://github.com/markegyptian55-cloud/RetinaFlow
-Space: https://huggingface.co/spaces/egyx/RetinaFlow
-License: MIT
+Live Space: https://huggingface.co/spaces/egyx/RetinaFlow
+
+DEPLOYMENT INSTRUCTIONS FOR HUGGING FACE SPACES:
+1. Create a new Space on Hugging Face (SDK: Gradio).
+2. Upload ONLY this file and rename it to 'app.py' (or keep as standalone_app.py).
+3. If asked for requirements.txt, only 4 packages are needed:
+   gradio[mcp]
+   onnxruntime
+   pillow
+   numpy
+   huggingface_hub
+4. The application will automatically download the required ONNX models 
+   from the official verified Space (egyx/RetinaFlow) on first run and cache them.
 """
 
 import os

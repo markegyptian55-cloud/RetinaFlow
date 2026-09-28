@@ -14,3 +14,4 @@ onnxruntime
 onnxscript
 gradio[mcp]
 pydantic==2.10.6
+huggingface_hub

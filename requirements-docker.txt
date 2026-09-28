@@ -1,0 +1,7 @@
+numpy
+Pillow
+onnxruntime
+requests
+gradio[mcp]
+pydantic==2.10.6
+huggingface_hub

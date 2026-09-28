@@ -1,0 +1,25 @@
+# Git & CI/CD
+.git
+.github
+.gitignore
+.gitattributes
+
+# Python artifacts & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+env/
+venv/
+ENV/
+
+# Development notebooks and logs
+EyeDisease.ipynb
+*.log
+scratch/
+.system_generated/
+
+# OS specific files
+.DS_Store
+Thumbs.db

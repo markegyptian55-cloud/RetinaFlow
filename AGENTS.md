@@ -27,8 +27,11 @@
     - `models/efficientnet_b5_m6.onnx` (SHA-256 pointer `b5d71c8402...`, 113.26 MB)
 * **Current Operational State:**
   - Full codebase pushed and live on GitHub and Hugging Face Spaces.
-  - Both ONNX models are verified and operational on CPU inference.
-  - The Gradio web app (`app.py`) with MCP server integration is deployed.
+  - Hugging Face Space [`egyx/RetinaFlow`](https://huggingface.co/spaces/egyx/RetinaFlow) is verified and **`RUNNING`**.
+  - ZeroGPU runtime compatibility is enabled with `@spaces.GPU` and safe local/CPU mock fallback.
+  - Both ONNX models are verified and operational on CPU and ZeroGPU inference.
+  - The Gradio web app (`app.py`) with MCP server integration is live and responsive.
+  - Automated CI/CD (`.github/workflows/sync_to_hf.yml`) is tested and operational.
   - Working tree is clean and up to date.
 
 ---
